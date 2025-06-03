@@ -1,0 +1,16 @@
+﻿@using BlockFarmEditor.Blocks
+@model TwoColumnSectionProperties
+
+@if (!string.IsNullOrWhiteSpace(Model.Header))
+{
+    <h2>@Model.Header</h2>
+}
+<div style="display: flex; gap: 1rem; padding: 40px;">
+    <div style="flex:1">
+        <block-area identifier="column1"></block-area>
+    </div>
+
+    <div style="flex:1">
+        <block-area identifier="column2"></block-area>
+    </div>
+</div>
