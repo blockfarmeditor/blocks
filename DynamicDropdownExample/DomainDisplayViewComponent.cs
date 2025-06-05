@@ -19,9 +19,14 @@ namespace BlockFarmEditor.Components.Blocks.DynamicDropdownExample
         {
             if (properties.Domain == null || !properties.Domain.Any())
             {
+                return Content("Domain not selected");
+            }
+
+            var domain = domainService.GetByName(properties.Domain.FirstOrDefault());
+            if (domain == null)
+            {
                 return Content("Domain not found");
             }
-            var domain = domainService.GetByName(properties.Domain.FirstOrDefault());
             // Return the view with the properties
             return View("~/Components/Blocks/DynamicDropdownExample/DomainDisplayExample.cshtml", domain);
         }

@@ -1,6 +1,7 @@
 ﻿using BlockFarmEditor.RCL.Library.Attributes;
 using BlockFarmEditor.RCL.Models.BuilderModels;
 using BlockFarmEditor.RCL.Models.ConfigModels;
+using BlockFarmEditor.Umbraco.Models;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Services;
 

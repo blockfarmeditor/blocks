@@ -1,0 +1,39 @@
+﻿
+@{ 
+    var idx = 0;
+    var indIdx = 0;
+    var guid = Guid.NewGuid();
+    var id = $"carousel_{guid}";
+}
+
+
+<div id="@id" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        @foreach (var item in Model)
+        {
+            <button type="button" data-bs-target="#@id" data-bs-slide-to="@indIdx" class="@(indIdx == 0? "active" : "")" aria-current="@(indIdx == 0? "true" : "")" aria-label="@(indIdx == 0? item.Header : "")"></button>
+            indIdx++;
+        }
+    </div>
+    <div class="carousel-inner">
+        @foreach (var item in Model)
+        {
+            <div class="carousel-item @(idx == 0 ? "active" : "")">
+                <img src="@item.Image.LocalCrops.Src" class="d-block w-100" alt="@item.Header">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>@item.Header</h5>
+                    @Html.Raw(item.Content)
+                </div>
+            </div>
+            idx++;
+        }
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#@id" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#@id" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
