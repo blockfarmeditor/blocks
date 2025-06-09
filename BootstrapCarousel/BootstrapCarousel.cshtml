@@ -1,4 +1,4 @@
-﻿
+﻿@using Umbraco.Extensions
 @{ 
     var idx = 0;
     var indIdx = 0;
@@ -19,7 +19,7 @@
         @foreach (var item in Model)
         {
             <div class="carousel-item @(idx == 0 ? "active" : "")">
-                <img src="@item.Image.LocalCrops.Src" class="d-block w-100" alt="@item.Header">
+                <img src="@FriendlyPublishedContentExtensions.Url(item.Image)" class="d-block w-100" alt="@item.Header">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>@item.Header</h5>
                     @Html.Raw(item.Content)
