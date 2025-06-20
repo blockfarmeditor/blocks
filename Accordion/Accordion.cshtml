@@ -1,0 +1,18 @@
+@using BlockFarmEditor.Components.Blocks.Accordion
+@model AccordionProperties
+@{
+    var accordionClass = "accordion";
+    if (Model.FlushStyle)
+    {
+        accordionClass += " accordion-flush";
+    }
+    var accordionId = Guid.NewGuid().ToString("N")[..8];
+    ViewData["AccordionId"] = accordionId;
+}
+
+<div class="@accordionClass" id="@accordionId">
+    @foreach (var item in Model.AccordionItems)
+    {
+        <partial name="~/Components/Blocks/Accordion/AccordionItem.cshtml" model="item.Content" />
+    }
+</div>

@@ -1,0 +1,27 @@
+@{
+    var itemId = Model.Key.ToString("N")[..8];
+    var collapseId = $"collapse{itemId}";
+    var headingId = $"heading{itemId}";
+    // Get the parent accordion ID from ViewData or fallback
+    var parentAccordionId = ViewData["AccordionId"]?.ToString() ?? "accordion";
+}
+
+<div class="accordion-item">
+    <h2 class="accordion-header" id="@headingId">
+        <button class="accordion-button @(Model.ShowByDefault ? "" : "collapsed")" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#@collapseId" 
+                aria-expanded="@(Model.ShowByDefault ? "true" : "false")" 
+                aria-controls="@collapseId">
+            @Model.Header
+        </button>
+    </h2>    <div id="@collapseId" 
+         class="accordion-collapse collapse @(Model.ShowByDefault ? "show" : "")" 
+         aria-labelledby="@headingId" 
+         data-bs-parent="#@parentAccordionId">
+        <div class="accordion-body">
+            @Html.Raw(Model.Content)
+        </div>
+    </div>
+</div>

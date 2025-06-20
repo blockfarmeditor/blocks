@@ -1,0 +1,30 @@
+@model BlockFarmEditor.Components.Blocks.Collapse.CollapseProperties
+@{
+    var collapseId = !string.IsNullOrWhiteSpace(Model.CollapseId) ? Model.CollapseId : Guid.NewGuid().ToString("N")[..8];
+    var collapseClass = "collapse";
+    if (Model.ShowByDefault)
+    {
+        collapseClass += " show";
+    }
+    if (Model.HorizontalCollapse)
+    {
+        collapseClass += " collapse-horizontal";
+    }
+}
+
+<!-- Button trigger collapse -->
+<button class="btn @Model.TriggerButtonStyle" 
+        type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#@collapseId" 
+        aria-expanded="@(Model.ShowByDefault ? "true" : "false")" 
+        aria-controls="@collapseId">
+    @Model.TriggerButtonText
+</button>
+
+<!-- Collapsible content -->
+<div class="@collapseClass" id="@collapseId">
+    <div class="card card-body">
+        @Html.Raw(Model.CollapseContent)
+    </div>
+</div>

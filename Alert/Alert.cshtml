@@ -1,0 +1,20 @@
+@model BlockFarmEditor.Components.Blocks.Alert.AlertProperties
+@{
+    var alertClass = $"alert alert-{Model.AlertType}";
+    if (Model.Dismissible)
+    {
+        alertClass += " alert-dismissible fade show";
+    }
+}
+
+<div class="@alertClass" role="alert">
+    @if (!string.IsNullOrWhiteSpace(Model.Title))
+    {
+        <h4 class="alert-heading">@Model.Title</h4>
+    }
+    @Html.Raw(Model.Content)
+    @if (Model.Dismissible)
+    {
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    }
+</div>

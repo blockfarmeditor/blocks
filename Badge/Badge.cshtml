@@ -1,0 +1,10 @@
+@model BlockFarmEditor.Components.Blocks.Badge.BadgeProperties
+@{
+    var badgeClass = $"badge text-bg-{Model.BadgeColor}";
+    if (Model.RoundedPill)
+    {
+        badgeClass += " rounded-pill";
+    }
+}
+
+<span class="@badgeClass">@Model.BadgeText</span>

@@ -1,0 +1,55 @@
+@model BlockFarmEditor.Components.Blocks.Button.ButtonProperties
+@{
+    var buttonClass = "btn";
+    var buttonStylePrefix = Model.OutlineStyle ? "btn-outline-" : "btn-";
+    buttonClass += $" {buttonStylePrefix}{Model.ButtonStyle}";
+    
+    if (!string.IsNullOrWhiteSpace(Model.ButtonSize))
+    {
+        buttonClass += $" {Model.ButtonSize}";
+    }
+    
+    if (Model.BlockButton)
+    {
+        buttonClass += " d-grid";
+    }
+
+    var link = Model.ButtonLink.FirstOrDefault();
+}
+
+@if (link != null && !string.IsNullOrWhiteSpace(link.Url))
+{
+    if (Model.BlockButton)
+    {
+        <div class="d-grid">
+            <a href="@link.Url" class="@buttonClass" 
+               @if (!string.IsNullOrWhiteSpace(link.Target)) { 
+                   <text>target="@link.Target"</text>
+               }>
+                @Model.ButtonText
+            </a>
+        </div>
+    }
+    else
+    {
+        <a href="@link.Url" class="@buttonClass" 
+           @if (!string.IsNullOrWhiteSpace(link.Target)) { 
+               <text>target="@link.Target"</text>
+           }>
+            @Model.ButtonText
+        </a>
+    }
+}
+else
+{
+    if (Model.BlockButton)
+    {
+        <div class="d-grid">
+            <button type="button" class="@buttonClass">@Model.ButtonText</button>
+        </div>
+    }
+    else
+    {
+        <button type="button" class="@buttonClass">@Model.ButtonText</button>
+    }
+}

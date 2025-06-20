@@ -1,0 +1,30 @@
+@using BlockFarmEditor.Components.Blocks.Breadcrumb 
+@model BreadcrumbProperties
+
+@if (Model.BreadcrumbItems.Any())
+{
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            @foreach (var item in Model.BreadcrumbItems.Select((value, index) => new { value, index }))
+            {
+                @if (item.index == Model.BreadcrumbItems.Count() - 1)
+                {
+                    <li class="breadcrumb-item active" aria-current="page">@item.value.Name</li>
+                }
+                else
+                {
+                    <li class="breadcrumb-item">
+                        @if (!string.IsNullOrWhiteSpace(item.value.Url))
+                        {
+                            <a href="@item.value.Url">@item.value.Name</a>
+                        }
+                        else
+                        {
+                            @item.value.Name
+                        }
+                    </li>
+                }
+            }
+        </ol>
+    </nav>
+}

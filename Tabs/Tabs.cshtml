@@ -1,0 +1,58 @@
+@model BlockFarmEditor.Components.Blocks.Tabs.TabsProperties
+@{
+    var tabsId = !string.IsNullOrWhiteSpace(Model.TabsId) ? Model.TabsId : Guid.NewGuid().ToString("N")[..8];
+    var navClass = $"nav {Model.TabStyle}";
+
+    if (!string.IsNullOrWhiteSpace(Model.Justification))
+    {
+        navClass += $" {Model.Justification}";
+    }
+
+    if (Model.FillSpace)
+    {
+        navClass += " nav-fill";
+    }
+
+}
+
+@if (Model.TabItems.Any())
+{
+    var tabItems = Model.TabItems.Select((value, index) => new { value, index });
+    <ul class="@navClass" id="@(tabsId)-tab" role="tablist">
+        @foreach (var item in tabItems)
+        {
+            dynamic tabItem = item.value.Content;
+            var tabId = !string.IsNullOrWhiteSpace(tabItem?.TabId) ? tabItem?.TabId : $"tab{item.index}";
+            var isActive = item.index == 0;
+
+            <li class="nav-item" role="presentation">
+                <button class="nav-link @(isActive ? "active" : "")" 
+                        id="@(tabId)-tab" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#@(tabId)-pane" 
+                        type="button" 
+                        role="tab" 
+                        aria-controls="@(tabId)-pane" 
+                        aria-selected="@(isActive ? "true" : "false")">
+                    @tabItem?.Title
+                </button>
+            </li>
+        }
+    </ul>
+    <div class="tab-content" id="@(tabsId)-tabContent">
+        @foreach (var item in tabItems)
+        {
+            dynamic tabItem = item.value.Content;
+            var tabId = !string.IsNullOrWhiteSpace(tabItem?.TabId) ? tabItem?.TabId : $"tab{item.index}";
+            var isActive = item.index == 0;
+
+            <div class="tab-pane fade @(isActive ? "show active" : "")" 
+                 id="@(tabId)-pane" 
+                 role="tabpanel" 
+                 aria-labelledby="@(tabId)-tab" 
+                 tabindex="0">
+                @Html.Raw(tabItem?.Content)
+            </div>
+        }
+    </div>
+}

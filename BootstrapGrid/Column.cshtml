@@ -1,5 +1,5 @@
 ﻿@{ 
-    var sizeMappings = Model.Content.ColumnSize switch
+    var sizeMappings = Model.ColumnSize switch
     {
         "12 Column (100%)" => "col-md-12",
         "11 Column (92%)" => "col-md-11",
@@ -16,7 +16,7 @@
         _ => "col-md"
     };
 
-    var gutterYMappings = Model.Content.GutterY switch
+    var gutterYMappings = Model.GutterY switch
     {
         "No Gutter (gy-0)" => "gy-0",
         "(gy-1)" => "gy-1",
@@ -27,7 +27,7 @@
         _ => ""
     };
 
-    var gutterXMappings = Model.Content.GutterX switch
+    var gutterXMappings = Model.GutterX switch
     {
         "No Gutter (gx-0)" => "gx-0",
         "(gx-1)" => "gx-1",
@@ -39,6 +39,6 @@
     };
 }
 
-<div class="@sizeMappings @gutterYMappings @gutterXMappings @Model.Content.CustomClass">
-    <block-area identifier="bootstrap-column-@Model.Content.Key.ToString()"></block-area>
+<div class="@sizeMappings @gutterYMappings @gutterXMappings @Model.CustomClass">
+    <block-area identifier="bootstrap-column-@Model.Key.ToString()"></block-area>
 </div>

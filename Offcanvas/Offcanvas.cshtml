@@ -1,0 +1,27 @@
+@model BlockFarmEditor.Components.Blocks.Offcanvas.OffcanvasProperties
+@{
+    var offcanvasId = !string.IsNullOrWhiteSpace(Model.OffcanvasId) ? Model.OffcanvasId : Guid.NewGuid().ToString("N")[..8];
+    var offcanvasClass = $"offcanvas {Model.Placement}";
+}
+
+<!-- Button trigger offcanvas -->
+<button class="btn @Model.TriggerButtonStyle" type="button" data-bs-toggle="offcanvas" data-bs-target="#@offcanvasId" aria-controls="@offcanvasId">
+    @Model.TriggerButtonText
+</button>
+
+<!-- Offcanvas -->
+<div class="@offcanvasClass" 
+     tabindex="-1" 
+     id="@offcanvasId" 
+     aria-labelledby="@(offcanvasId)Label"
+     @if (!Model.Backdrop) { <text>data-bs-backdrop="false"</text> }
+     @if (!Model.Keyboard) { <text>data-bs-keyboard="false"</text> }
+     @if (!Model.Scroll) { <text>data-bs-scroll="false"</text> }>
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="@(offcanvasId)Label">@Model.OffcanvasTitle</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        @Html.Raw(Model.OffcanvasContent)
+    </div>
+</div>

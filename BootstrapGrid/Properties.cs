@@ -1,22 +1,16 @@
 ﻿
-using BlockFarmEditor.Blocks;
-using BlockFarmEditor.Components.Blocks.DynamicDropdownExample;
-using BlockFarmEditor.Components.TestingBlocks.BootstrapContainer;
+using BlockFarmEditor.Components.Blocks.BootstrapGrid;
 using BlockFarmEditor.RCL.Library.Attributes;
 using BlockFarmEditor.RCL.Models.BuilderModels;
 using BlockFarmEditor.RCL.Models.ConfigModels;
 using BlockFarmEditor.Umbraco.Models;
-using System.Text.Json.Nodes;
-using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models.Blocks;
-using Umbraco.Cms.Core.Models.PublishedContent;
-using Umbraco.Cms.Core.Services;
 
 [assembly: BlockFarmEditorContainer("blockfarmeditor.bootstrap-container", "Container", ViewPath = "~/Components/Blocks/BootstrapGrid/Container.cshtml", Icon = "folder", PropertiesType = typeof(ContainerProperties))]
 [assembly: BlockFarmEditorContainer("blockfarmeditor.bootstrap-row", "Row", ViewPath = "~/Components/Blocks/BootstrapGrid/Row.cshtml", Icon = "folder", PropertiesType = typeof(RowProperties))]
 
 
-namespace BlockFarmEditor.Components.TestingBlocks.BootstrapContainer
+namespace BlockFarmEditor.Components.Blocks.BootstrapGrid
 {
     public class ContainerProperties : IBuilderProperties
     {

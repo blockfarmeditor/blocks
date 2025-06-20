@@ -1,0 +1,33 @@
+@model BlockFarmEditor.Components.Blocks.ListGroup.ListGroupProperties
+@{
+    var listGroupClass = "list-group";
+    
+    if (!string.IsNullOrWhiteSpace(Model.ListGroupStyle))
+    {
+        listGroupClass += $" {Model.ListGroupStyle}";
+    }
+    
+    if (Model.FlushStyle)
+    {
+        listGroupClass += " list-group-flush";
+    }
+    
+    if (Model.Numbered)
+    {
+        listGroupClass += " list-group-numbered";
+    }
+    
+    if (Model.Horizontal)
+    {
+        listGroupClass += " list-group-horizontal";
+    }
+    
+    var elementTag = Model.Numbered ? "ol" : "ul";
+}
+
+<@elementTag class="@listGroupClass">
+    @foreach (var item in Model.ListItems)
+    {
+        <partial name="~/Components/Blocks/ListGroup/ListGroupItem.cshtml" model="item.Content" />
+    }
+</@elementTag>
