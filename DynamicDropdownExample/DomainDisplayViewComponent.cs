@@ -17,12 +17,12 @@ namespace BlockFarmEditor.Components.Blocks.DynamicDropdownExample
         /// <returns></returns>
         public async Task<IViewComponentResult> InvokeAsync(DomainDisplayExampleProperties properties)
         {
-            if (properties.Domain == null || !properties.Domain.Any())
+            if (string.IsNullOrWhiteSpace(properties.Domain))
             {
                 return Content("Domain not selected");
             }
 
-            var domain = domainService.GetByName(properties.Domain.FirstOrDefault());
+            var domain = domainService.GetByName(properties.Domain);
             if (domain == null)
             {
                 return Content("Domain not found");

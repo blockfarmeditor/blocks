@@ -13,9 +13,9 @@ namespace BlockFarmEditor.Components.Blocks.DynamicDropdownExample
         /// Represents a domain selection property for the dynamic dropdown example.
         /// Constants.PropertyEditors.Aliases.DropDownListFlexible returns either a string or an IEnumerable<string>.
         /// </summary>
-        [BlockFarmEditorPropertyEditor(Constants.PropertyEditors.Aliases.DropDownListFlexible, "Domain List")]
-        [BlockFarmEditorPropertyEditorConfig(typeof(DomainDisplayExamplePropertiesConfig))]
-        public IEnumerable<string> Domain { get; set; } = [];
+        [BlockFarmEditorDataType("Dropdown", "Domain List")]
+        [BlockFarmEditorDataTypeConfig(typeof(DomainDisplayExamplePropertiesConfig))]
+        public string Domain { get; set; } = string.Empty;
     }
 
     /// <summary>

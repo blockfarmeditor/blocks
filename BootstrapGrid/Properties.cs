@@ -6,6 +6,7 @@ using BlockFarmEditor.RCL.Library.Attributes;
 using BlockFarmEditor.RCL.Models.BuilderModels;
 using BlockFarmEditor.RCL.Models.ConfigModels;
 using BlockFarmEditor.Umbraco.Models;
+using System.Text.Json.Nodes;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Models.Blocks;
 using Umbraco.Cms.Core.Models.PublishedContent;
@@ -19,9 +20,9 @@ namespace BlockFarmEditor.Components.TestingBlocks.BootstrapContainer
 {
     public class ContainerProperties : IBuilderProperties
     {
-        [BlockFarmEditorPropertyEditor(Constants.PropertyEditors.Aliases.DropDownListFlexible, "Container")]
-        [BlockFarmEditorPropertyEditorConfig(typeof(ContainerPropertiesConfig))]
-        public IEnumerable<string> Container { get; set; } = [];
+        [BlockFarmEditorDataType("Dropdown", "Container")]
+        [BlockFarmEditorDataTypeConfig(typeof(ContainerPropertiesConfig))]
+        public string Container { get; set; } = string.Empty;
     }
 
     public class ContainerPropertiesConfig : IBlockFarmEditorConfig
@@ -50,33 +51,7 @@ namespace BlockFarmEditor.Components.TestingBlocks.BootstrapContainer
 
     public class RowProperties : IBuilderProperties
     {
-        //[BlockFarmEditorPropertyEditor(Constants.PropertyEditors.Aliases.BlockList, "Columns")]
-        //[BlockFarmEditorPropertyEditorConfig(typeof(RowPropertiesConfig))]
-        [BlockFarmEditorDataType("BootstrapColumnDataType", "Columns")]
+        [BlockFarmEditorDataType("BlockList", "Columns")]
         public BlockListModel Columns { get; set; } = new BlockListModel([]);
-    }
-
-    public class RowPropertiesConfig : IBlockFarmEditorConfig
-    {
-        public async Task<IEnumerable<BlockFarmEditorConfigItem>> GetItems()
-        {
-            return
-            [
-                new ()
-                {
-                    Alias = "items",
-                    // Generate a list of name,value pairs for the dropdown items
-                    Value =new List<DropdownEditorConfigItem>() {
-                        new("Container", "container"),
-                        new("Container Fluid", "container-fluid"),
-                    }
-                },
-                new ()
-                {
-                    Alias = "multiple",
-                    Value = false // Assuming single selection for this example
-                }
-            ];
-        }
     }
 }
