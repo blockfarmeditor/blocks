@@ -1,0 +1,8 @@
+﻿@using BlockFarmEditor.Components.TestingBlocks.BootstrapContainer
+
+<div class="row">
+    @foreach(var column in Model.Columns)
+    {
+        <partial name="~/Components/Blocks/BootstrapGrid/Column.cshtml" model="column" />
+    }
+</div>

@@ -1,0 +1,15 @@
+﻿@using BlockFarmEditor.Components.Blocks.Card
+@model CardProperties 
+
+    <div class="card">
+        <img src="@(Model.Image != null ? FriendlyPublishedContentExtensions.MediaUrl(Model.Image) : "")" class="card-img-top" alt="@Model.Image?.Name()">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Header</h5>
+            <p class="card-text">@Html.Raw(Model.Description)</p>
+            @foreach (var item in Model.ButtonUrl)
+            {
+                <a href="@item.Url" class="btn btn-primary" target="@item.Target" title="@item.Name">@item.Name</a>
+
+            }
+        </div>
+    </div>

@@ -1,22 +1,26 @@
-﻿@using Umbraco.Extensions
-@{ 
+﻿@using BlockFarmEditor.Components.Blocks.BootstrapCarousel
+
+@model BootstrapCarouselProperties
+@using Umbraco.Extensions
+@{
     var idx = 0;
     var indIdx = 0;
     var guid = Guid.NewGuid();
     var id = $"carousel_{guid}";
+    dynamic caresouls = Model.Carousels;
 }
 
 
 <div id="@id" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
-        @foreach (var item in Model)
+        @foreach (var item in caresouls)
         {
             <button type="button" data-bs-target="#@id" data-bs-slide-to="@indIdx" class="@(indIdx == 0? "active" : "")" aria-current="@(indIdx == 0? "true" : "")" aria-label="@(indIdx == 0? item.Header : "")"></button>
             indIdx++;
         }
     </div>
     <div class="carousel-inner">
-        @foreach (var item in Model)
+        @foreach (var item in caresouls)
         {
             <div class="carousel-item @(idx == 0 ? "active" : "")">
                 <img src="@FriendlyPublishedContentExtensions.Url(item.Image)" class="d-block w-100" alt="@item.Header">

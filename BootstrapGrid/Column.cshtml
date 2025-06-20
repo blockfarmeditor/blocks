@@ -1,0 +1,44 @@
+﻿@{ 
+    var sizeMappings = Model.Content.ColumnSize switch
+    {
+        "12 Column (100%)" => "col-md-12",
+        "11 Column (92%)" => "col-md-11",
+        "10 Column (83%)" => "col-md-10",
+        "9 Column (75%)" => "col-md-9",
+        "8 Column (66%)" => "col-md-8",
+        "7 Column (58%)" => "col-md-7",
+        "6 Column (50%)" => "col-md-6",
+        "5 Column (42%)" => "col-md-5",
+        "4 Column (33%)" => "col-md-4",
+        "3 Column (25%)" => "col-md-3",
+        "2 Column (16%)" => "col-md-2",
+        "1 Column (8%)" => "col-md-1",
+        _ => "col-md"
+    };
+
+    var gutterYMappings = Model.Content.GutterY switch
+    {
+        "No Gutter (gy-0)" => "gy-0",
+        "(gy-1)" => "gy-1",
+        "(gy-2)" => "gy-2",
+        "(gy-3)" => "gy-3",
+        "(gy-4)" => "gy-4",
+        "(gy-5)" => "gy-5",
+        _ => ""
+    };
+
+    var gutterXMappings = Model.Content.GutterX switch
+    {
+        "No Gutter (gx-0)" => "gx-0",
+        "(gx-1)" => "gx-1",
+        "(gx-2)" => "gx-2",
+        "(gx-3)" => "gx-3",
+        "(gx-4)" => "gx-4",
+        "(gx-5)" => "gx-5",
+        _ => ""
+    };
+}
+
+<div class="@sizeMappings @gutterYMappings @gutterXMappings @Model.Content.CustomClass">
+    <block-area identifier="bootstrap-column-@Model.Content.Key.ToString()"></block-area>
+</div>
