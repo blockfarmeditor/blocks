@@ -47,7 +47,7 @@
     {
         dynamic item = column.Content;
         <div class="@SizeMappings(item.ColumnSize) @GutterYMappings(item.GutterY) @GutterXMappings(item.GutterX) @item.CustomClass">
-            <block-area identifier="bootstrap-column-@item.Key.ToString()"></block-area>
+            <block-area identifier="column-@(item.Key.ToString("N").Substring(0, 8))"></block-area>
         </div>
     }
 </div>
