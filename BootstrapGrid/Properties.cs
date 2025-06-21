@@ -53,11 +53,10 @@ namespace BlockFarmEditor.Components.Blocks.BootstrapGrid
         public BlockListModel Columns { get; set; } = new BlockListModel([]);
 
         [BlockFarmEditorDataType("Dropdown", "Row Direction")]
-        [BlockFarmEditorDataTypeConfig(typeof(PrefixRowPropertiesConfig))]
+        [BlockFarmEditorDataTypeConfig(typeof(DirectionRowPropertiesConfig))]
         public string RowDirection { get; set; } = string.Empty;
 
         [BlockFarmEditorDataType("Textsring", "Row Custom Class")]
-        [BlockFarmEditorDataTypeConfig(typeof(PrefixRowPropertiesConfig))]
         public string RowCustomCss { get; set; } = string.Empty;
     }
 
