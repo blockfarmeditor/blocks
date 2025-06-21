@@ -1,5 +1,9 @@
-﻿@using BlockFarmEditor.Components.TestingBlocks.BootstrapContainer
+﻿@using BlockFarmEditor.Components.Blocks.BootstrapGrid
 @model ContainerProperties
+@{ 
+    IEnumerable<string> allowedBlocks = ["blockfarmeditor.bootstrap-row"];
+}
+
 <div class="@Model.Container">
-    <block-area identifier="container"></block-area>
+    <block-area identifier="container" allowed-blocks="@allowedBlocks"></block-area>
 </div>

@@ -1,10 +1,53 @@
 ﻿@using BlockFarmEditor.Components.Blocks.BootstrapGrid
 @model RowProperties
 
-
-<div class="row">
-    @foreach(var column in Model.Columns)
+@{
+    var SizeMappings = (string columnSize) => Model.Prefix + columnSize switch
     {
-        <partial name="~/Components/Blocks/BootstrapGrid/Column.cshtml" model="column.Content" />
+        "12 Column (100%)" => "12",
+        "11 Column (92%)" => "11",
+        "10 Column (83%)" => "10",
+        "9 Column (75%)" => "9",
+        "8 Column (66%)" => "8",
+        "7 Column (58%)" => "7",
+        "6 Column (50%)" => "6",
+        "5 Column (42%)" => "5",
+        "4 Column (33%)" => "4",
+        "3 Column (25%)" => "3",
+        "2 Column (16%)" => "2",
+        "1 Column (8%)" => "1",
+        _ => "col-md"
+    };
+
+    var GutterYMappings = (string gutterY) => gutterY switch
+    {
+        "No Gutter (gy-0)" => "gy-0",
+        "(gy-1)" => "gy-1",
+        "(gy-2)" => "gy-2",
+        "(gy-3)" => "gy-3",
+        "(gy-4)" => "gy-4",
+        "(gy-5)" => "gy-5",
+        _ => ""
+    };
+
+    var GutterXMappings = (string gutterX) => gutterX switch
+    {
+        "No Gutter (gx-0)" => "gx-0",
+        "(gx-1)" => "gx-1",
+        "(gx-2)" => "gx-2",
+        "(gx-3)" => "gx-3",
+        "(gx-4)" => "gx-4",
+        "(gx-5)" => "gx-5",
+        _ => ""
+    };
+}
+
+<div class="row @Model.RowDirection @Model.RowCustomCss">
+    @foreach (var column in Model.Columns)
+    {
+        dynamic item = column.Content;
+        <div class="@SizeMappings(item.ColumnSize) @GutterYMappings(item.GutterY) @GutterXMappings(item.GutterX) @item.CustomClass">
+            <block-area identifier="bootstrap-column-@item.Key.ToString()"></block-area>
+        </div>
     }
 </div>

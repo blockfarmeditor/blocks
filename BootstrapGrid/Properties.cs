@@ -45,7 +45,71 @@ namespace BlockFarmEditor.Components.Blocks.BootstrapGrid
 
     public class RowProperties : IBuilderProperties
     {
+        [BlockFarmEditorDataType("Dropdown", "Prefix")]
+        [BlockFarmEditorDataTypeConfig(typeof(PrefixRowPropertiesConfig))]
+        public string Prefix { get; set; } = "col-md";
+
         [BlockFarmEditorDataType("BlockList", "Columns")]
         public BlockListModel Columns { get; set; } = new BlockListModel([]);
+
+        [BlockFarmEditorDataType("Dropdown", "Row Direction")]
+        [BlockFarmEditorDataTypeConfig(typeof(PrefixRowPropertiesConfig))]
+        public string RowDirection { get; set; } = string.Empty;
+
+        [BlockFarmEditorDataType("Textsring", "Row Custom Class")]
+        [BlockFarmEditorDataTypeConfig(typeof(PrefixRowPropertiesConfig))]
+        public string RowCustomCss { get; set; } = string.Empty;
+    }
+
+    public class PrefixRowPropertiesConfig : IBlockFarmEditorConfig
+    {
+        public async Task<IEnumerable<BlockFarmEditorConfigItem>> GetItems()
+        {
+            return
+            [
+                new ()
+                {
+                    Alias = "items",
+                    // Generate a list of name,value pairs for the dropdown items
+                    Value =new List<DropdownEditorConfigItem>() {
+                        new("Extra Small (0px to 575px)", "col"),
+                        new("Small (576px to 767px)", "col-sm"),
+                        new("Medium (768px to 991px)", "col-md"),
+                        new("Large (992px to 1199px)", "col-lg"),
+                        new("Extra Large (1200px to 1399px)", "col-xl"),
+                        new("Extra extra large (1400px)", "col-xxl")
+                    }
+                },
+                new ()
+                {
+                    Alias = "multiple",
+                    Value = false // Assuming single selection for this example
+                }
+            ];
+        }
+    }
+
+    public class DirectionRowPropertiesConfig : IBlockFarmEditorConfig
+    {
+        public async Task<IEnumerable<BlockFarmEditorConfigItem>> GetItems()
+        {
+            return
+            [
+                new ()
+                {
+                    Alias = "items",
+                    // Generate a list of name,value pairs for the dropdown items
+                    Value =new List<DropdownEditorConfigItem>() {
+                        new("Left to Right", ""),
+                        new("Right to Left", "flex-row-reverse")
+                    }
+                },
+                new ()
+                {
+                    Alias = "multiple",
+                    Value = false // Assuming single selection for this example
+                }
+            ];
+        }
     }
 }
