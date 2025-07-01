@@ -16,7 +16,8 @@ namespace BlockFarmEditor.Components.Blocks.Accordion
         [BlockFarmEditorDataType("Checkbox", "Flush Style")]
         public bool FlushStyle { get; set; } = false;
 
-        [BlockFarmEditorDataType("BlockList", "Accordion Items")]
+        [BlockFarmEditorDataType("Bootstrap Accordion Block List", "Accordion Items")]
         public BlockListModel AccordionItems { get; set; } = new BlockListModel([]);
     }
 }
+ 

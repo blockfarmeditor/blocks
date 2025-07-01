@@ -28,6 +28,8 @@
 <@elementTag class="@listGroupClass">
     @foreach (var item in Model.ListItems)
     {
-        <partial name="~/Components/Blocks/ListGroup/ListGroupItem.cshtml" model="item.Content" />
+        <li class="list-group-item">
+            @Html.Raw(item)
+        </li>
     }
 </@elementTag>

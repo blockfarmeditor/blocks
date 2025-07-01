@@ -24,8 +24,8 @@ namespace BlockFarmEditor.Components.Blocks.ListGroup
         [BlockFarmEditorDataType("Checkbox", "Horizontal")]
         public bool Horizontal { get; set; } = false;
 
-        [BlockFarmEditorDataType("BlockList", "List Items")]
-        public BlockListModel ListItems { get; set; } = new BlockListModel([]);
+        [BlockFarmEditorDataType("MultipleTextstring", "List Items")]
+        public IEnumerable<string> ListItems { get; set; } = [];
     }
 
     public class ListGroupStyleConfig : IBlockFarmEditorConfig

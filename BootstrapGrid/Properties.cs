@@ -56,7 +56,7 @@ namespace BlockFarmEditor.Components.Blocks.BootstrapGrid
         [BlockFarmEditorDataTypeConfig(typeof(DirectionRowPropertiesConfig))]
         public string RowDirection { get; set; } = string.Empty;
 
-        [BlockFarmEditorDataType("Textsring", "Row Custom Class")]
+        [BlockFarmEditorDataType("Textstring", "Row Custom Class")]
         public string RowCustomCss { get; set; } = string.Empty;
     }
 
