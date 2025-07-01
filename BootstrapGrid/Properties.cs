@@ -49,7 +49,7 @@ namespace BlockFarmEditor.Components.Blocks.BootstrapGrid
         [BlockFarmEditorDataTypeConfig(typeof(PrefixRowPropertiesConfig))]
         public string Prefix { get; set; } = "col-md";
 
-        [BlockFarmEditorDataType("BlockList", "Columns")]
+        [BlockFarmEditorDataType("Bootstrap Grid Column Block List", "Columns")]
         public BlockListModel Columns { get; set; } = new BlockListModel([]);
 
         [BlockFarmEditorDataType("Dropdown", "Row Direction")]

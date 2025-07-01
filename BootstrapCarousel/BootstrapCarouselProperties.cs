@@ -12,7 +12,7 @@ namespace BlockFarmEditor.Components.Blocks.BootstrapCarousel
 {
     public class BootstrapCarouselProperties : IBuilderProperties
     {
-        [BlockFarmEditorDataType("Carousel List", "Carousels")]
-        public BlockListModel Carousels { get; set; } = new BlockListModel([]);
+        [BlockFarmEditorDataType("Bootstrap Carousel Content Picker", "Carousels")]
+        public IEnumerable<IPublishedContent> Carousels { get; set; } = [];
     }
 }
