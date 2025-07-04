@@ -5,7 +5,7 @@ using BlockFarmEditor.RCL.Models.ConfigModels;
 using BlockFarmEditor.Umbraco.Models;
 using Umbraco.Cms.Core.Strings;
 
-[assembly: BlockFarmEditorBlock("blockfarmeditor.bootstrap-alert", "Alert", PropertiesType = typeof(AlertProperties), ViewPath = "~/Components/Blocks/Alert/Alert.cshtml", Icon = "alert")]
+[assembly: BlockFarmEditorBlock("blockfarmeditor.bootstrap-alert", "Alert", PropertiesType = typeof(AlertProperties), ViewPath = "~/Components/Blocks/Alert/Alert.cshtml", Icon = "bell")]
 
 namespace BlockFarmEditor.Components.Blocks.Alert
 {
@@ -21,7 +21,7 @@ namespace BlockFarmEditor.Components.Blocks.Alert
         [BlockFarmEditorDataType("Richtext editor", "Content")]
         public IHtmlEncodedString Content { get; set; } = new HtmlEncodedString(string.Empty);
 
-        [BlockFarmEditorDataType("Checkbox", "Dismissible")]
+        [BlockFarmEditorDataType("True/false", "Dismissible")]
         public bool Dismissible { get; set; } = false;
     }
 

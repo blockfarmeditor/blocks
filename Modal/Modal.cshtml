@@ -1,4 +1,5 @@
-@model BlockFarmEditor.Components.Blocks.Modal.ModalProperties
+@using BlockFarmEditor.Components.Blocks.Modal
+@model ModalProperties
 @{
     var modalId = !string.IsNullOrWhiteSpace(Model.ModalId) ? Model.ModalId : Guid.NewGuid().ToString("N")[..8];
     var modalClass = "modal fade";

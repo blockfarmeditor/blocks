@@ -5,7 +5,7 @@ using BlockFarmEditor.Umbraco.Models;
 using Umbraco.Cms.Core.Models.Blocks;
 using Umbraco.Cms.Core.Models.PublishedContent;
 
-[assembly: BlockFarmEditorBlock("blockfarmeditor.bootstrap-carousel", "Carousel", PropertiesType = typeof(BootstrapCarouselProperties), ViewPath = "~/Components/Blocks/BootstrapCarousel/BootstrapCarousel.cshtml", Icon = "picture")]
+[assembly: BlockFarmEditorBlock("blockfarmeditor.bootstrap-carousel", "Carousel", PropertiesType = typeof(BootstrapCarouselProperties), ViewPath = "~/Components/Blocks/BootstrapCarousel/BootstrapCarousel.cshtml", Icon = "slideshow")]
 
 
 namespace BlockFarmEditor.Components.Blocks.BootstrapCarousel

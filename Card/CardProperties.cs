@@ -6,7 +6,7 @@ using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Strings;
 
-[assembly: BlockFarmEditorBlock("blockfarmeditor.bootstrap-card", "Card", PropertiesType = typeof(CardProperties), ViewPath = "~/Components/Blocks/Card/Card.cshtml", Icon = "picture")]
+[assembly: BlockFarmEditorBlock("blockfarmeditor.bootstrap-card", "Card", PropertiesType = typeof(CardProperties), ViewPath = "~/Components/Blocks/Card/Card.cshtml", Icon = "book")]
 
 namespace BlockFarmEditor.Components.Blocks.Card
 {

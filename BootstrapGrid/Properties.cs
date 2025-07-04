@@ -6,8 +6,8 @@ using BlockFarmEditor.RCL.Models.ConfigModels;
 using BlockFarmEditor.Umbraco.Models;
 using Umbraco.Cms.Core.Models.Blocks;
 
-[assembly: BlockFarmEditorContainer("blockfarmeditor.bootstrap-container", "Container", ViewPath = "~/Components/Blocks/BootstrapGrid/Container.cshtml", Icon = "folder", PropertiesType = typeof(ContainerProperties))]
-[assembly: BlockFarmEditorContainer("blockfarmeditor.bootstrap-row", "Row", ViewPath = "~/Components/Blocks/BootstrapGrid/Row.cshtml", Icon = "folder", PropertiesType = typeof(RowProperties))]
+[assembly: BlockFarmEditorContainer("blockfarmeditor.bootstrap-container", "Container", ViewPath = "~/Components/Blocks/BootstrapGrid/Container.cshtml", Icon = "shape-square", PropertiesType = typeof(ContainerProperties))]
+[assembly: BlockFarmEditorContainer("blockfarmeditor.bootstrap-row", "Row", ViewPath = "~/Components/Blocks/BootstrapGrid/Row.cshtml", Icon = "columns-4", PropertiesType = typeof(RowProperties))]
 
 
 namespace BlockFarmEditor.Components.Blocks.BootstrapGrid

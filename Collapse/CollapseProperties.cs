@@ -5,7 +5,7 @@ using BlockFarmEditor.RCL.Models.ConfigModels;
 using BlockFarmEditor.Umbraco.Models;
 using Umbraco.Cms.Core.Strings;
 
-[assembly: BlockFarmEditorBlock("blockfarmeditor.bootstrap-collapse", "Collapse", PropertiesType = typeof(CollapseProperties), ViewPath = "~/Components/Blocks/Collapse/Collapse.cshtml", Icon = "unfold")]
+[assembly: BlockFarmEditorBlock("blockfarmeditor.bootstrap-collapse", "Collapse", PropertiesType = typeof(CollapseProperties), ViewPath = "~/Components/Blocks/Collapse/Collapse.cshtml", Icon = "page-down")]
 
 namespace BlockFarmEditor.Components.Blocks.Collapse
 {

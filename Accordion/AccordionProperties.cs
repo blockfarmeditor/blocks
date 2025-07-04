@@ -3,7 +3,7 @@ using BlockFarmEditor.RCL.Models.BuilderModels;
 using Umbraco.Cms.Core.Models.Blocks;
 using BlockFarmEditor.Components.Blocks.Accordion;
 
-[assembly: BlockFarmEditorBlock("blockfarmeditor.bootstrap-accordion", "Accordion", PropertiesType = typeof(AccordionProperties), ViewPath = "~/Components/Blocks/Accordion/Accordion.cshtml", Icon = "list")]
+[assembly: BlockFarmEditorBlock("blockfarmeditor.bootstrap-accordion", "Accordion", PropertiesType = typeof(AccordionProperties), ViewPath = "~/Components/Blocks/Accordion/Accordion.cshtml", Icon = "pannel-close")]
 
 namespace BlockFarmEditor.Components.Blocks.Accordion
 {

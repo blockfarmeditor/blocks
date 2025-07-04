@@ -1,4 +1,5 @@
-@model BlockFarmEditor.Components.Blocks.Alert.AlertProperties
+@using BlockFarmEditor.Components.Blocks.Alert
+@model AlertProperties
 @{
     var alertClass = $"alert alert-{Model.AlertType}";
     if (Model.Dismissible)

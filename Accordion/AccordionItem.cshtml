@@ -1,5 +1,6 @@
+@model IPublishedElement
 @{
-    var itemId = Model.Key.ToString("N")[..8];
+    var itemId = (Model.Key as Guid?)?.ToString("N")[..8] ?? "defaultId"; ;
     var collapseId = $"collapse{itemId}";
     var headingId = $"heading{itemId}";
     // Get the parent accordion ID from ViewData or fallback
@@ -9,9 +10,9 @@
 <div class="accordion-item">
     <h2 class="accordion-header" id="@headingId">
         <button class="accordion-button @(Model.ShowByDefault ? "" : "collapsed")" 
-                type="button" 
-                data-bs-toggle="collapse" 
-                data-bs-target="#@collapseId" 
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#@collapseId"
                 aria-expanded="@(Model.ShowByDefault ? "true" : "false")" 
                 aria-controls="@collapseId">
             @Model.Header

@@ -5,7 +5,7 @@ using BlockFarmEditor.RCL.Models.ConfigModels;
 using BlockFarmEditor.Umbraco.Models;
 using Umbraco.Cms.Core.Strings;
 
-[assembly: BlockFarmEditorBlock("blockfarmeditor.bootstrap-modal", "Modal", PropertiesType = typeof(ModalProperties), ViewPath = "~/Components/Blocks/Modal/Modal.cshtml", Icon = "browser-window")]
+[assembly: BlockFarmEditorBlock("blockfarmeditor.bootstrap-modal", "Modal", PropertiesType = typeof(ModalProperties), ViewPath = "~/Components/Blocks/Modal/Modal.cshtml", Icon = "box")]
 
 namespace BlockFarmEditor.Components.Blocks.Modal
 {

@@ -1,27 +1,28 @@
-@model BlockFarmEditor.Components.Blocks.ListGroup.ListGroupProperties
+@using BlockFarmEditor.Components.Blocks.ListGroup
+@model ListGroupProperties
 @{
     var listGroupClass = "list-group";
-    
+
     if (!string.IsNullOrWhiteSpace(Model.ListGroupStyle))
     {
         listGroupClass += $" {Model.ListGroupStyle}";
     }
-    
+
     if (Model.FlushStyle)
     {
         listGroupClass += " list-group-flush";
     }
-    
+
     if (Model.Numbered)
     {
         listGroupClass += " list-group-numbered";
     }
-    
+
     if (Model.Horizontal)
     {
         listGroupClass += " list-group-horizontal";
     }
-    
+
     var elementTag = Model.Numbered ? "ol" : "ul";
 }
 

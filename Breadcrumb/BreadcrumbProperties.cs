@@ -3,7 +3,7 @@ using BlockFarmEditor.RCL.Library.Attributes;
 using BlockFarmEditor.RCL.Models.BuilderModels;
 using Umbraco.Cms.Core.Models;
 
-[assembly: BlockFarmEditorBlock("blockfarmeditor.bootstrap-breadcrumb", "Breadcrumb", PropertiesType = typeof(BreadcrumbProperties), ViewPath = "~/Components/Blocks/Breadcrumb/Breadcrumb.cshtml", Icon = "directions")]
+[assembly: BlockFarmEditorBlock("blockfarmeditor.bootstrap-breadcrumb", "Breadcrumb", PropertiesType = typeof(BreadcrumbProperties), ViewPath = "~/Components/Blocks/Breadcrumb/Breadcrumb.cshtml", Icon = "navigation")]
 
 namespace BlockFarmEditor.Components.Blocks.Breadcrumb
 {

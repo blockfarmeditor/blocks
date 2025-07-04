@@ -2,7 +2,7 @@
 @model RowProperties
 
 @{
-    var SizeMappings = (string columnSize) => Model.Prefix + (columnSize switch
+    var SizeMappings = (string? columnSize) => Model.Prefix + (columnSize switch
     {
         "12 Column (100%)" => "-12",
         "11 Column (92%)" => "-11",
@@ -19,7 +19,7 @@
         _ => ""
     });
 
-    var GutterYMappings = (string gutterY) => gutterY switch
+    var GutterYMappings = (string? gutterY) => gutterY switch
     {
         "No Gutter (gy-0)" => "gy-0",
         "(gy-1)" => "gy-1",
@@ -30,7 +30,7 @@
         _ => ""
     };
 
-    var GutterXMappings = (string gutterX) => gutterX switch
+    var GutterXMappings = (string? gutterX) => gutterX switch
     {
         "No Gutter (gx-0)" => "gx-0",
         "(gx-1)" => "gx-1",
@@ -45,8 +45,8 @@
 <div class="row @Model.RowDirection @Model.RowCustomCss">
     @foreach (var column in Model.Columns)
     {
-        dynamic item = column.Content;
-        <div class="@SizeMappings(item.ColumnSize) @GutterYMappings(item.GutterY) @GutterXMappings(item.GutterX) @item.CustomClass">
+        IPublishedElement item = column.Content as IPublishedElement;
+        <div class="@(SizeMappings(item.Value<string>("columnSize"))) @(GutterYMappings(item.Value<string>("GutterY"))) @(GutterXMappings(item.Value<string>("GutterX"))) @(item.Value<string>("CustomClass"))">
             <block-area identifier="column-@(item.Key.ToString("N").Substring(0, 8))"></block-area>
         </div>
     }

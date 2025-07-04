@@ -5,7 +5,7 @@ using BlockFarmEditor.RCL.Models.ConfigModels;
 using BlockFarmEditor.Umbraco.Models;
 using Umbraco.Cms.Core.Strings;
 
-[assembly: BlockFarmEditorBlock("blockfarmeditor.bootstrap-offcanvas", "Offcanvas", PropertiesType = typeof(OffcanvasProperties), ViewPath = "~/Components/Blocks/Offcanvas/Offcanvas.cshtml", Icon = "panel-right")]
+[assembly: BlockFarmEditorBlock("blockfarmeditor.bootstrap-offcanvas", "Offcanvas", PropertiesType = typeof(OffcanvasProperties), ViewPath = "~/Components/Blocks/Offcanvas/Offcanvas.cshtml", Icon = "outdent")]
 
 namespace BlockFarmEditor.Components.Blocks.Offcanvas
 {

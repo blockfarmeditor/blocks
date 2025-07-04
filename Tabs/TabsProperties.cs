@@ -5,7 +5,7 @@ using BlockFarmEditor.RCL.Models.ConfigModels;
 using BlockFarmEditor.Umbraco.Models;
 using Umbraco.Cms.Core.Models.Blocks;
 
-[assembly: BlockFarmEditorBlock("blockfarmeditor.bootstrap-tabs", "Tabs", PropertiesType = typeof(TabsProperties), ViewPath = "~/Components/Blocks/Tabs/Tabs.cshtml", Icon = "browser-window-menu")]
+[assembly: BlockFarmEditorBlock("blockfarmeditor.bootstrap-tabs", "Tabs", PropertiesType = typeof(TabsProperties), ViewPath = "~/Components/Blocks/Tabs/Tabs.cshtml", Icon = "tab")]
 
 namespace BlockFarmEditor.Components.Blocks.Tabs
 {

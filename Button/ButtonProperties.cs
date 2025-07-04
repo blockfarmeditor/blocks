@@ -5,7 +5,7 @@ using BlockFarmEditor.RCL.Models.ConfigModels;
 using BlockFarmEditor.Umbraco.Models;
 using Umbraco.Cms.Core.Models;
 
-[assembly: BlockFarmEditorBlock("blockfarmeditor.bootstrap-button", "Button", PropertiesType = typeof(ButtonProperties), ViewPath = "~/Components/Blocks/Button/Button.cshtml", Icon = "cursor")]
+[assembly: BlockFarmEditorBlock("blockfarmeditor.bootstrap-button", "Button", PropertiesType = typeof(ButtonProperties), ViewPath = "~/Components/Blocks/Button/Button.cshtml", Icon = "hand-pointer")]
 
 namespace BlockFarmEditor.Components.Blocks.Button
 {

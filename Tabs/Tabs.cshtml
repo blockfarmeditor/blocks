@@ -1,4 +1,5 @@
-@model BlockFarmEditor.Components.Blocks.Tabs.TabsProperties
+@using BlockFarmEditor.Components.Blocks.Tabs 
+@model TabsProperties
 @{
     var tabsId = !string.IsNullOrWhiteSpace(Model.TabsId) ? Model.TabsId : Guid.NewGuid().ToString("N")[..8];
     var navClass = $"nav {Model.TabStyle}";

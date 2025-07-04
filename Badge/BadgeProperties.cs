@@ -4,7 +4,7 @@ using BlockFarmEditor.RCL.Models.BuilderModels;
 using BlockFarmEditor.RCL.Models.ConfigModels;
 using BlockFarmEditor.Umbraco.Models;
 
-[assembly: BlockFarmEditorBlock("blockfarmeditor.bootstrap-badge", "Badge", PropertiesType = typeof(BadgeProperties), ViewPath = "~/Components/Blocks/Badge/Badge.cshtml", Icon = "award")]
+[assembly: BlockFarmEditorBlock("blockfarmeditor.bootstrap-badge", "Badge", PropertiesType = typeof(BadgeProperties), ViewPath = "~/Components/Blocks/Badge/Badge.cshtml", Icon = "tag")]
 
 namespace BlockFarmEditor.Components.Blocks.Badge
 {

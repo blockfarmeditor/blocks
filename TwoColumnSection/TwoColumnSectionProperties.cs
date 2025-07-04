@@ -2,7 +2,7 @@
 using BlockFarmEditor.RCL.Library.Attributes;
 using BlockFarmEditor.RCL.Models.BuilderModels;
 
-[assembly: BlockFarmEditorContainer("blockfarmeditor.section-2-columns", "2 Column Section", ViewPath = "~/Components/Blocks/TwoColumnSection/TwoColumnSection.cshtml", Icon = "folder", PropertiesType = typeof(TwoColumnSectionProperties))]
+[assembly: BlockFarmEditorContainer("blockfarmeditor.section-2-columns", "2 Column Section", ViewPath = "~/Components/Blocks/TwoColumnSection/TwoColumnSection.cshtml", Icon = "columns-2", PropertiesType = typeof(TwoColumnSectionProperties))]
 
 
 namespace BlockFarmEditor.Blocks
