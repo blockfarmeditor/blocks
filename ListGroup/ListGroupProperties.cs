@@ -15,16 +15,16 @@ namespace BlockFarmEditor.Components.Blocks.ListGroup
         [BlockFarmEditorDataTypeConfig(typeof(ListGroupStyleConfig))]
         public string ListGroupStyle { get; set; } = "";
 
-        [BlockFarmEditorDataType("Checkbox", "Flush Style")]
+        [BlockFarmEditorDataType("True/false", "Flush Style")]
         public bool FlushStyle { get; set; } = false;
 
-        [BlockFarmEditorDataType("Checkbox", "Numbered")]
+        [BlockFarmEditorDataType("True/false", "Numbered")]
         public bool Numbered { get; set; } = false;
 
-        [BlockFarmEditorDataType("Checkbox", "Horizontal")]
+        [BlockFarmEditorDataType("True/false", "Horizontal")]
         public bool Horizontal { get; set; } = false;
 
-        [BlockFarmEditorDataType("MultipleTextstring", "List Items")]
+        [BlockFarmEditorDataType("Multiple Text String", "List Items")]
         public IEnumerable<string> ListItems { get; set; } = [];
     }
 

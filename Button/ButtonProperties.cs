@@ -25,10 +25,10 @@ namespace BlockFarmEditor.Components.Blocks.Button
         [BlockFarmEditorDataTypeConfig(typeof(ButtonSizeConfig))]
         public string ButtonSize { get; set; } = "";
 
-        [BlockFarmEditorDataType("Checkbox", "Outline Style")]
+        [BlockFarmEditorDataType("True/false", "Outline Style")]
         public bool OutlineStyle { get; set; } = false;
 
-        [BlockFarmEditorDataType("Checkbox", "Block Button")]
+        [BlockFarmEditorDataType("True/false", "Block Button")]
         public bool BlockButton { get; set; } = false;
     }
 

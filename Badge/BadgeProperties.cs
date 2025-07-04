@@ -17,7 +17,7 @@ namespace BlockFarmEditor.Components.Blocks.Badge
         [BlockFarmEditorDataTypeConfig(typeof(BadgeColorConfig))]
         public string BadgeColor { get; set; } = "primary";
 
-        [BlockFarmEditorDataType("Checkbox", "Rounded Pill")]
+        [BlockFarmEditorDataType("True/false", "Rounded Pill")]
         public bool RoundedPill { get; set; } = false;
     }
 

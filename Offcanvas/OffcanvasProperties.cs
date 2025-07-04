@@ -31,13 +31,13 @@ namespace BlockFarmEditor.Components.Blocks.Offcanvas
         [BlockFarmEditorDataTypeConfig(typeof(PlacementConfig))]
         public string Placement { get; set; } = "offcanvas-start";
 
-        [BlockFarmEditorDataType("Checkbox", "Backdrop")]
+        [BlockFarmEditorDataType("True/false", "Backdrop")]
         public bool Backdrop { get; set; } = true;
 
-        [BlockFarmEditorDataType("Checkbox", "Keyboard")]
+        [BlockFarmEditorDataType("True/false", "Keyboard")]
         public bool Keyboard { get; set; } = true;
 
-        [BlockFarmEditorDataType("Checkbox", "Scroll")]
+        [BlockFarmEditorDataType("True/false", "Scroll")]
         public bool Scroll { get; set; } = false;
     }
 

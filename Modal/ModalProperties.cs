@@ -31,13 +31,13 @@ namespace BlockFarmEditor.Components.Blocks.Modal
         [BlockFarmEditorDataTypeConfig(typeof(ModalSizeConfig))]
         public string ModalSize { get; set; } = "";
 
-        [BlockFarmEditorDataType("Checkbox", "Centered")]
+        [BlockFarmEditorDataType("True/false", "Centered")]
         public bool Centered { get; set; } = false;
 
-        [BlockFarmEditorDataType("Checkbox", "Scrollable")]
+        [BlockFarmEditorDataType("True/false", "Scrollable")]
         public bool Scrollable { get; set; } = false;
 
-        [BlockFarmEditorDataType("Checkbox", "Static Backdrop")]
+        [BlockFarmEditorDataType("True/false", "Static Backdrop")]
         public bool StaticBackdrop { get; set; } = false;
     }
 

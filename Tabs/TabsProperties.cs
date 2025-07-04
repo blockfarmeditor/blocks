@@ -25,7 +25,7 @@ namespace BlockFarmEditor.Components.Blocks.Tabs
         [BlockFarmEditorDataType("Checkbox", "Fill Available Space")]
         public bool FillSpace { get; set; } = false;
 
-        [BlockFarmEditorDataType("BlockList", "Tab Items")]
+        [BlockFarmEditorDataType("Bootstrap Tabs Block List", "Tab Items")]
         public BlockListModel TabItems { get; set; } = new BlockListModel([]);
     }
 

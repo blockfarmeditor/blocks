@@ -24,10 +24,10 @@ namespace BlockFarmEditor.Components.Blocks.Collapse
         [BlockFarmEditorDataType("Richtext editor", "Collapse Content")]
         public IHtmlEncodedString CollapseContent { get; set; } = new HtmlEncodedString(string.Empty);
 
-        [BlockFarmEditorDataType("Checkbox", "Show by Default")]
+        [BlockFarmEditorDataType("True/false", "Show by Default")]
         public bool ShowByDefault { get; set; } = false;
 
-        [BlockFarmEditorDataType("Checkbox", "Horizontal Collapse")]
+        [BlockFarmEditorDataType("True/false", "Horizontal Collapse")]
         public bool HorizontalCollapse { get; set; } = false;
     }
 

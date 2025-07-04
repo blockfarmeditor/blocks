@@ -13,7 +13,7 @@ namespace BlockFarmEditor.Components.Blocks.Accordion
     /// </summary>
     public class AccordionProperties : IBuilderProperties
     {
-        [BlockFarmEditorDataType("Checkbox", "Flush Style")]
+        [BlockFarmEditorDataType("True/false", "Flush Style")]
         public bool FlushStyle { get; set; } = false;
 
         [BlockFarmEditorDataType("Bootstrap Accordion Block List", "Accordion Items")]
